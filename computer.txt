@@ -1,0 +1,82 @@
+objects:
+Computer
+-fields
+    arrayList of defense sequences
+    arrayList of offense sequences
+-constructor
+    array of positions
+    array of taken
+    array of open
+-methods
+    nextMove()
+    listPositions()
+    getOpenPositions()
+    getTakenPositions()
+
+Position
+-fields
+    number (1-9)
+    marker (x or o)
+-methods
+    getNumber()
+    setMarker()
+    getMarker()
+
+initialize computer object
+initialize 9 position objects
+
+mark player's postion as taken with X
+
+Strat 1
+if 5 is empty take 5
+play defense if a sequence is active otherwise take any open ROW
+
+Strat 2
+build arraylist[4] {2,4,6,8}
+randomly pick from arraylist, discard pick
+check next row
+if at all occupied, pick again from arrayList
+if not occupied, take picked position
+**player move**
+
+
+2 - 9,3 - 7,1
+4 - 3,1 - 9,7
+6 - 7,9 - 1,3
+8 - 1,7 - 3,9
+
+Defense Check Sequences
+stored in ArrayList, trim AL based on positions already taken
+1,2 - 3
+2,3 - 1
+1,3 - 2
+4,5 - 6
+5,6 - 4
+4,6 - 5
+7,8 - 9
+8,9 - 7
+7,9 - 8
+1,4 - 7
+4,7 - 1
+1,7 - 4
+2,5 - 8
+5,8 - 2
+2,8 - 5
+3,6 - 9
+6,9 - 3
+3,9 - 6
+1,5 - 9
+5,9 - 1
+1,9 - 5
+3,5 - 7
+5,7 - 3
+3,7 - 5
+--
+2,7 - 1
+2,9 - 3
+4,3 - 1
+4,9 - 7
+6,1 - 3
+6,7 - 9
+8,1 - 7
+8,3 - 9
